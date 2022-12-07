@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book A Ticket</title>
+  <link rel="stylesheet" href="cssstyles.css">
+  <style>
+    h2{
+        background-color: rgb(14, 233, 116);
+        color: red;
+        border: 2px solid rgb(11, 5, 16);
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin-left:50%;
+    }
+    h1{ 
+        direction: rtl;
+    }
+    p.ll{
+        color:rgb(243, 24, 24);
+        direction:rtl;
+    }
+    p.oo{color: rgb(173, 31, 31);
+        direction:rtl;
+    }
+    form{
+      color:aqua;
+    }
+    table,th,td{
+      border:2px solid rgb(78, 168, 8);
+      border-collapse:collapse ;
+      padding  :10px      
+    }
+    th{
+      text-align:left;
+      color:rgb(252, 6, 227);
+    }
+    td{
+      color:rgb(244, 25, 25)
+    }
+    body{
+      background-image: url("https://www.harivanshtours.com/images/Page/medium/train-ticket-booking-harivansh.jpg");
+      background-repeat:cover;
+      background-size: 100%;
+      background-attachment: fixed;
+    }    
+  </style>
+      
+    
+<link rel="stylesheet" href="cssstyles.css">
+
+</head>
+<body>
+<h1 style="text-align:center"><mark>INDIAN RAILWAYS</mark></h1>
+<h2>Booking Train Tickets</h2>
+<form style="color:rgb(6, 1, 45)">
+    <label><b>FROM</b></label><br><br>
+    <input list="train" required>
+<datalist id="train">
+    <option>Vijayawada</option>
+    <option>Rajamundry</option>
+    <option>Punjab</option>
+    <option>Guntur</option>
+    <option>Jalandhar</option>
+    <option>Phagwara</option>
+    <option>Jalandhar cantt</option>
+    <option>New delhi</option>
+    <option>Vishakaptnam</option>
+    <option>Mumbai</option>
+    <option>Hyderabad</option>
+    <option>Uttar pradesh</option>
+    <option>Rajasthan</option>
+    <option>Gujarat</option>
+    <option>Mandhya pradesh</option>
+    <option>Bihar</option>
+    <option>Odisha</option>
+    <option>West bengal</option>
+    <option>Tamilnadu</option>
+    <option>Kerala</option>
+    <option>Manipur</option>
+    <option>Chhattisgard</option>
+    <option>Goa</option>
+    <option>Jammu</option>
+    <option>Kashmir</option>
+    <option>Ladakh</option>
+    <option>Himachal pradesh</option>
+    <option>Chandigarh</option>
+    <option>Harayana</option>
+    <option>Sikkam</option>
+    <option>Assam</option>
+    <option>Tripura</option>
+    <option>Nagaland</option>
+    <option>Mizoram</option>
+    <option>Gangtok</option>
+    <option>Itanagar</option>
+    <option>Shillong</option>
+    <option>Ranchi</option>
+    <option>Aizawl</option>
+    <option>Agratala</option>
+    <option>Myanmar</option>
+    <option>Patna</option>
+    <option>Daman</option>
+    <option>Hyderabad</option>
+</datalist><br><br>
+<label><b>TO</b></label><br><br>
+    <input list="too" required>
+<datalist id="too">
+    <option>Vijayawada</option>
+    <option>Rajamundry</option>
+    <option>Punjab</option>
+    <option>Guntur</option>
+    <option>Jalandhar</option>
+    <option>Phagwara</option>
+    <option>Jalandhar cantt</option>
+    <option>New delhi</option>
+    <option>Vishakaptnam</option>
+    <option>Mumbai</option>
+    <option>Hyderabad</option>
+    <option>Uttar pradesh</option>
+    <option>Rajasthan</option>
+    <option>Gujarat</option>
+    <option>Mandhya pradesh</option>
+    <option>Bihar</option>
+    <option>Odisha</option>
+    <option>West bengal</option>
+    <option>Tamilnadu</option>
+    <option>Kerala</option>
+    <option>Manipur</option>
+    <option>Chhattisgard</option>
+    <option>Goa</option>
+    <option>Jammu</option>
+    <option>Kashmir</option>
+    <option>Ladakh</option>
+    <option>Himachal pradesh</option>
+    <option>Chandigarh</option>
+    <option>Harayana</option>
+    <option>Sikkam</option>
+    <option>Assam</option>
+    <option>Tripura</option>
+    <option>Nagaland</option>
+    <option>Mizoram</option>
+</datalist><br><br>
+<label for="date"><b>DATE</b></label><br><br>
+<input type="date" id="date" required><br><br>
+<label style="color:rgb(255, 174, 0)"><b>CLASS</b></label><br><br>
+<select>
+    <option>All classes</option>
+    <option>Ac first class</option>
+    <option>Ac 2 tier</option>
+    <option>Ac 3 tier</option>
+    <option>Ac chair car</option>
+    <option>Ac 3 economy</option>
+    <option>Exec.chair car</option>
+    <option>Sleeper</option>
+    <option>First class</option>
+    <option>Second sitting</option>
+    <option>Vistadome non ac </option>
+    <option>vistadome chair car</option>
+    <option>vistadome ac</option>
+</select><br><br>
+<p style="color:rgb(184, 179, 237)"><b>QUATA</b></p>
+<select>
+    <option>General</option>
+    <option>Ladies</option>
+    <option>Tatkal</option> 
+    <option>Lower berth/sr.citizen</option>
+    <option>Premium Tatkal</option>
+    <option>Person with disablility</option>
+</select>
+</form>
+<form style="color:rgb(240, 232, 238)"><br>
+<input type="checkbox" id="checkbox">
+<label for="checkbox">FLEXIBLE WITH DATE</label><br>
+<input type="checkbox" id="nikhil">
+<label for="krishna">PERSON WITH DISABILITY</label><br>
+<input type="checkbox" id="satish">
+<label for="pavan">TRAINS WITH AVALIABLE BERTH</label><br>
+<input type="checkbox" id="gowri">
+<label for="manikanta">RAILWAY PASS CONCESSION</label><br>
+<input type="checkbox" id="reddy">
+<label for="king">STUDENT PASS CONCESSION</label>
+</form>
+<br>
+<form>
+  <a href="file:///C:/Users/Satish%20pakalapati/OneDrive/Desktop/html/displaypage.html" class="btn"><input type="button" value="submit"></input></a>
+</form>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Indian Railway</title>
+<style>
+body{
+    background-image: url("https://images.pexels.com/photos/325200/pexels-photo-325200.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    padding-top: 20px;
+    background-color: black;
+}     
+
+:root{
+    color:rgb(249, 248, 248);
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+section{
+    padding:2rem 9%;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3.5rem;
+    border-radius: .5rem;
+    font-size: 1.7rem; 
+    color:var(--red);
+    background:var(--light-red);
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover{
+    background:var(--red);
+    color:rgb(195, 241, 11);
+}
+
+.heading{
+    text-align: center;
+    color:#333;
+    font-size: 4rem;
+    padding-bottom: 3rem;
+}
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(103, 248, 238);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color:yellow;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {background-color:rgb(21, 0, 255);}
+.dropdown:hover .dropdown-content {
+ display: block;}
+
+.heading span{
+    color:var(--red);
+    background:var(--light-red);
+    border-radius: .5rem;
+    padding:.2rem 1.5rem;
+}
+
+header{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 1000;
+    background: rgb(0, 229, 255);
+    padding:1.5rem 9%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color:#333;
+}
+
+header .logo span{
+    color:var(--red);
+}
+
+header .navbar a{
+    color:#333;
+    font-size: 2rem;
+    padding:0 1.5rem;
+}
+
+header .navbar a:hover{
+    color:var(--red);
+}
+
+header .icons #menu-bars,
+header .icons a{
+    height:4.5rem;
+    line-height: 4.5rem;
+    width:5rem;
+    font-size: 2rem;
+    margin-right: .5rem;
+    border-radius: .5rem;
+    color:var(--red);
+    background:var(--light-red);
+    text-align: center;
+}
+
+header .icons #menu-bars:hover,
+header .icons a:hover{
+    background-color:var(--red);
+    color: black;
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+fieldset{
+    padding-top: 200px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+}
+</style>
+
+</head>
+<body>
+
+    
+<!-- header section starts  -->
+
+<header>
+   <a href="#" class="logo"> <h1><-^^-NSG-^^-></h1><span>Indian</span>Railway</a>
+
+    <nav class="navbar">
+        <a href="file:///C:/Users/Satish%20pakalapati/OneDrive/Desktop/html/booking.html">Book A Ticket</a>
+        <a href="file:///C:/Users/Satish%20pakalapati/OneDrive/Desktop/html/railholiday.html">HOLIDAY PACKAGES</a>
+        <b style="color:rgb(149, 255, 0) "><a href="file:///C:/Users/Satish%20pakalapati/OneDrive/Desktop/html/login.html">Log Out</a></b>
+        <li class="dropdown"><a href="javascript:void(0)" class="dropbtn">FOOD ITEMS</a>
+            <div class="dropdown-content">
+                <a href="file:///C:/Users/Satish%20pakalapati/OneDrive/Desktop/html/food.html">NON-VEG</a>
+                <a href="file:///C:/Users/Satish%20pakalapati/OneDrive/Desktop/html/veg.html">VEG.MEALS</a>
+                <a href="file:///C:/Users/Satish%20pakalapati/OneDrive/Desktop/html/juice.html" >FRUIT Juices</a>
+            </div>
+    </nav>
+
+</header>
+<fieldset>
+<b><b><h1 style="color:deeppink">Abbrevations Used in Railway Reservation</h1></b></b><br>
+<p><h1>In railway reservation, certain abbreviations are used to indicate the status of your booking. These include:</h1></p><br>
+<p><h1><mark>CNF (Confirmed):</mark>This means you have a confirmed reservation and a seat/berth has been allotted exclusively to you.</h1></p><br> 
+<p><h1><mark>RAC (Reservation against Cancellation): </mark>This means you have a berth, but you will be sharing it with another passenger. When passengers with confirmed reservation cancel their tickets, RAC tickets get the highest priority. If the status of your RAC ticket remains the same even after the chart preparation, you can board the train.</h1></p><br>  
+<p><h1><mark>GNWL (General Waitlist):</mark> This means you don’t have a confirmed berth/seat. You will be allotted a confirmed berth/seat based on cancellations. General Waitlist is the most common waitlist type and typically, passengers who board the train from the originating station or a station that is close to the originating station are included in this list. GNWL has the highest chances of confirmation.</h1></p><br>
+<p><h1><mark>CKWL/TQWL (Tatkal Waitlist):</mark> This means you have booked your tickets under the Tatkal quota and you don’t have a confirmed berth/seat. During the chart preparation, GNWL is given priority over CKWL. However, CKWL tickets get confirmed directly without going through the RAC phase.</h1></p><br>
+<p><h1><mark>RLWL (Remote Location Waitlist):</mark> Typically, passengers boarding from intermediate stations are included in this waitlist type. Chances of confirmation are less for RLWL as compared to GNWL.</h1></p><br>
+<p><h1><mark>PQWL (Pooled Quota Waitlist):</mark> This is a kind of Waitlist that is shared by many small railways stations en route. The entire run has only one PQWL which typically operates only from the station where the train originates. PQWL tickets are issued when you are boarding and de-boarding at two intermediate stations. The chances of confirmation are relatively less for PQWL tickets.</h1></p><br>
+<p><h1><mark>RSWL (Roadside Waitlist): </mark>This is a kind of waitlist typically issued to passengers who board the trains from the station of origin to a roadside station en route. The chances of confirmation are relatively less for RSWL tickets.</h1></p><br>
+<p><h1><mark>RLGN (Remote Location General Waiting List): </mark>This refers to the waitlisted tickets booked by passengers under the RLWL quota. In other words, once the booking is done, RLWL becomes RLGN.</p><br>
+<p><h1><mark>RQWL (Request Waitlist):</mark> Tickets under this waitlist type are usually issued to passengers who travel from an intermediate station and to an intermediate station, and when their booking is not covered by any other waitlist quotas like GNWL, PQWL, etc.</h1></p><br>
+<p><h1><mark>REGRET:</mark> The upper limit allowed for reservation has been reached. You will not be allowed to book tickets even on the waitlist.</h1><br>
+</p>
+</fieldset>
+</body>
+</html>
