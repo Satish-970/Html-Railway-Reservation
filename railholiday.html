@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Rail Holiday Planner</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #003366; /* Deep Blue, like a train carriage */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .action-button {
+            background-color: #e67e22; /* Vibrant Orange for action */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #d35400;
+        }
+
+        /* Main Content and Calendar Grid */
+        .container {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 20px auto;
+        }
+
+        .calendar-grid-year {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 months per row on wide screens */
+            gap: 20px;
+        }
+
+        /* Individual Month Calendar */
+        .month-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .month-header {
+            text-align: center;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #003366;
+            font-weight: 600;
+        }
+
+        .calendar-days-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .day-name {
+            background-color: #e6f0ff;
+            padding: 5px 0;
+            font-weight: bold;
+            color: #555;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .day-cell {
+            padding: 8px 0;
+            border-right: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            cursor: default;
+        }
+        
+        .day-cell:nth-child(7n) { /* Remove right border for Saturday column */
+            border-right: none;
+        }
+
+        .empty-cell {
+            background-color: #fafafa;
+            color: #ccc;
+        }
+        
+        /* Holiday/Planning Styles */
+        .holiday {
+            background-color: #a0d9b4; /* Light Green for planned holiday */
+            color: #004d40;
+            font-weight: 600;
+            border-radius: 3px;
+            border: 1px solid #7cb396;
+        }
+
+        .weekend {
+            background-color: #fffde7; /* Light Yellow for weekends */
+        }
+        
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            .calendar-grid-year {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .calendar-grid-year {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .calendar-grid-year {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .navbar h1 {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>2026 Rail Holiday Planner</h1>
+    <a href="booking.html" class="action-button">Book Rail Tickets Now</a>
+</div>
+
+<div class="container">
+    <p>Use the calendar below to see 2026 holidays and plan your rail journeys. Days marked in <span style="color:#004d40;font-weight:bold;">green</span> indicate potential holiday periods.</p>
+    
+    <div class="calendar-grid-year">
+        
+        <div class="month-card">
+            <div class="month-header">January</div>
+            <div class="calendar-days-grid">
+                <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                
+                <div class="day-cell holiday">1</div> <div class="day-cell">2</div>
+                <div class="day-cell weekend">3</div>
+
+                <div class="day-cell weekend">4</div>
+                <div class="day-cell">5</div>
+                <div class="day-cell">6</div>
+                <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell weekend">10</div>
+
+                <div class="day-cell weekend">11</div>
+                <div class="day-cell">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell weekend">17</div>
+                
+                <div class="day-cell weekend">18</div>
+                <div class="day-cell">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell weekend">24</div>
+
+                <div class="day-cell weekend">25</div>
+                <div class="day-cell holiday">26</div> 
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell weekend">31</div>
+            </div>
+        </div>
+
+        <div class="month-card">
+            <div class="month-header">February</div>
+            <div class="calendar-days-grid">
+                <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell weekend">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell">3</div>
+                <div class="day-cell">4</div>
+                <div class="day-cell">5</div>
+                <div class="day-cell">6</div>
+                <div class="day-cell weekend">7</div>
+                
+                <div class="day-cell weekend">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell">11</div>
+                <div class="day-cell">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell weekend">14</div>
+                
+                <div class="day-cell weekend">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell">18</div>
+                <div class="day-cell">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell weekend">21</div>
+                
+                <div class="day-cell weekend">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell">25</div>
+                <div class="day-cell">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell weekend">28</div>
+
+            </div>
+        </div>
+
+        <div class="month-card">
+            <div class="month-header">March</div>
+            <div class="calendar-days-grid">
+                <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell weekend">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell">3</div>
+                <div class="day-cell">4</div>
+                <div class="day-cell">5</div>
+                <div class="day-cell">6</div>
+                <div class="day-cell weekend">7</div>
+                
+                <div class="day-cell weekend">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell">11</div>
+                <div class="day-cell">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell weekend">14</div>
+                
+                <div class="day-cell weekend">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell">18</div>
+                <div class="day-cell">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell weekend">21</div>
+                
+                <div class="day-cell weekend">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell">25</div>
+                <div class="day-cell">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell weekend">28</div>
+                
+                <div class="day-cell weekend">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell">31</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+            </div>
+        </div>
+        
+        <div class="month-card">
+            <div class="month-header">April</div>
+            <div class="calendar-days-grid">
+                <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+            </div>
+        </div>
+
+        <div class="month-card">
+            <div class="month-header">May</div>
+            <div class="calendar-days-grid">
+              <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-header">June</div>
+            <div class="calendar-days-grid">
+              <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-header">July</div>
+            <div class="calendar-days-grid">
+              <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+             </div>
+        </div>
+        <div class="month-card">
+            <div class="month-header">August</div>
+            <div class="calendar-days-grid">
+              <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+             </div>
+        </div>
+        <div class="month-card">
+            <div class="month-header">September</div>
+            <div class="calendar-days-grid">
+              <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+             </div>
+        </div>
+        <div class="month-card">
+            <div class="month-header">October</div>
+            <div class="calendar-days-grid">
+              <div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+            </div>
+        </div>
+        <div class="month-card">
+            <div class="month-header">November</div>
+            <div class="calendar-days-grid"><div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div></div>
+        </div>
+        <div class="month-card">
+            <div class="month-header">December</div>
+            <div class="calendar-days-grid"><div class="day-name">S</div>
+                <div class="day-name">M</div>
+                <div class="day-name">T</div>
+                <div class="day-name">W</div>
+                <div class="day-name">T</div>
+                <div class="day-name">F</div>
+                <div class="day-name">S</div>
+
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div>
+
+                <div class="day-cell">1</div>
+                <div class="day-cell">2</div>
+                <div class="day-cell holiday">3</div> <div class="day-cell weekend holiday">4</div>
+
+                <div class="day-cell weekend holiday">5</div> <div class="day-cell holiday">6</div> <div class="day-cell">7</div>
+                <div class="day-cell">8</div>
+                <div class="day-cell">9</div>
+                <div class="day-cell">10</div>
+                <div class="day-cell weekend">11</div>
+
+                <div class="day-cell weekend">12</div>
+                <div class="day-cell">13</div>
+                <div class="day-cell">14</div>
+                <div class="day-cell">15</div>
+                <div class="day-cell">16</div>
+                <div class="day-cell">17</div>
+                <div class="day-cell weekend">18</div>
+
+                <div class="day-cell weekend">19</div>
+                <div class="day-cell">20</div>
+                <div class="day-cell">21</div>
+                <div class="day-cell">22</div>
+                <div class="day-cell">23</div>
+                <div class="day-cell">24</div>
+                <div class="day-cell weekend">25</div>
+
+                <div class="day-cell weekend">26</div>
+                <div class="day-cell">27</div>
+                <div class="day-cell">28</div>
+                <div class="day-cell">29</div>
+                <div class="day-cell">30</div>
+                <div class="day-cell empty-cell"></div>
+                <div class="day-cell empty-cell"></div></div>
+        </div>
+        
+    </div>
+</div>
+
+</body>
+</html>
